@@ -120,11 +120,11 @@ class BotAPI:
         return await self._http.request(route)
 
     async def create_guild_role_member(
-        self,
-        guild_id: str,
-        role_id: str,
-        user_id: str,
-        channel_id: str = None,
+            self,
+            guild_id: str,
+            role_id: str,
+            user_id: str,
+            channel_id: str = None,
     ) -> str:
         """
         增加频道身份组成员。
@@ -195,11 +195,11 @@ class BotAPI:
         return await self._http.request(route)
 
     async def get_delete_member(
-        self,
-        guild_id: str,
-        user_id: str,
-        add_blacklist: bool = False,
-        delete_history_msg_days: int = 0,
+            self,
+            guild_id: str,
+            user_id: str,
+            add_blacklist: bool = False,
+            delete_history_msg_days: int = 0,
     ) -> str:
         """
         删除频道成员
@@ -249,7 +249,7 @@ class BotAPI:
         return await self._http.request(route, params=params)
 
     async def get_guild_role_members(
-        self, guild_id: str, role_id: str, start_index: str = "0", limit: int = 1
+            self, guild_id: str, role_id: str, start_index: str = "0", limit: int = 1
     ) -> Dict[str, Union[List[user.Member], str]]:
         """
         获取频道身份组成员列表。
@@ -328,7 +328,7 @@ class BotAPI:
         return await self._http.request(route)
 
     async def create_channel(
-        self, guild_id: str, name: str, type: channel.ChannelType, sub_type: channel.ChannelSubType, **fields
+            self, guild_id: str, name: str, type: channel.ChannelType, sub_type: channel.ChannelSubType, **fields
     ) -> channel.ChannelPayload:
         """
         创建子频道
@@ -418,7 +418,7 @@ class BotAPI:
         return await self._http.request(route)
 
     async def update_channel_user_permissions(
-        self, channel_id: str, user_id: str, add: Permission = None, remove: Permission = None
+            self, channel_id: str, user_id: str, add: Permission = None, remove: Permission = None
     ) -> str:
         """
         修改指定子频道用户的权限。
@@ -456,7 +456,7 @@ class BotAPI:
         return await self._http.request(route)
 
     async def update_channel_role_permissions(
-        self, channel_id: str, role_id: str, add: Permission = None, remove: Permission = None
+            self, channel_id: str, role_id: str, add: Permission = None, remove: Permission = None
     ) -> str:
         """
         修改指定子频道身份组的权限
@@ -495,18 +495,18 @@ class BotAPI:
         return await self._http.request(route)
 
     async def post_message(
-        self,
-        channel_id: str,
-        content: str = None,
-        embed: message.Embed = None,
-        ark: message.Ark = None,
-        message_reference: message.Reference = None,
-        image: str = None,
-        file_image: Union[bytes, BinaryIO, str] = None,
-        msg_id: str = None,
-        event_id: str = None,
-        markdown: message.MarkdownPayload = None,
-        keyboard: message.Keyboard = None,
+            self,
+            channel_id: str,
+            content: str = None,
+            embed: message.Embed = None,
+            ark: message.Ark = None,
+            message_reference: message.Reference = None,
+            image: str = None,
+            file_image: Union[bytes, BinaryIO, str] = None,
+            msg_id: str = None,
+            event_id: str = None,
+            markdown: message.MarkdownPayload = None,
+            keyboard: message.Keyboard = None,
     ) -> message.Message:
         """
         发送消息。
@@ -572,10 +572,10 @@ class BotAPI:
         return await self._http.request(route, params=params)
 
     async def post_keyboard_message(
-        self,
-        channel_id: str,
-        keyboard: message.KeyboardPayload = None,
-        markdown: message.MarkdownPayload = None,
+            self,
+            channel_id: str,
+            keyboard: message.KeyboardPayload = None,
+            markdown: message.MarkdownPayload = None,
     ) -> message.Message:
         """
         `post_keyboard_message` 使用内联键盘发送消息
@@ -616,13 +616,13 @@ class BotAPI:
         return await self._http.request(route, json=payload)
 
     async def patch_guild_message(
-        self,
-        channel_id: str,
-        patch_msg_id: str,
-        msg_id: str = None,
-        event_id: str = None,
-        markdown: message.MarkdownPayload = None,
-        keyboard: message.KeyboardPayload = message.KeyboardPayload(content={}),
+            self,
+            channel_id: str,
+            patch_msg_id: str,
+            msg_id: str = None,
+            event_id: str = None,
+            markdown: message.MarkdownPayload = None,
+            keyboard: message.KeyboardPayload = message.KeyboardPayload(content={}),
     ) -> message.Message:
         """
         修改频道markdown消息，需要先申请权限。
@@ -667,18 +667,18 @@ class BotAPI:
         return await self._http.request(route, json=payload)
 
     async def post_dms(
-        self,
-        guild_id: str,
-        content: str = None,
-        embed: message.Embed = None,
-        ark: message.Ark = None,
-        message_reference: message.Reference = None,
-        image: str = None,
-        file_image: Union[bytes, BinaryIO, str] = None,
-        msg_id: str = None,
-        event_id: str = None,
-        markdown: message.MarkdownPayload = None,
-        keyboard: message.Keyboard = None,
+            self,
+            guild_id: str,
+            content: str = None,
+            embed: message.Embed = None,
+            ark: message.Ark = None,
+            message_reference: message.Reference = None,
+            image: str = None,
+            file_image: Union[bytes, BinaryIO, str] = None,
+            msg_id: str = None,
+            event_id: str = None,
+            markdown: message.MarkdownPayload = None,
+            keyboard: message.Keyboard = None,
     ) -> message.Message:
         """
         发送私信。
@@ -853,7 +853,7 @@ class BotAPI:
         return await self._http.request(route, json=payload)
 
     async def mute_member(
-        self, guild_id: str, user_id: str, mute_end_timestamp: str = None, mute_seconds: str = None
+            self, guild_id: str, user_id: str, mute_end_timestamp: str = None, mute_seconds: str = None
     ) -> str:
         """
         使频道中的指定成员禁言。
@@ -878,7 +878,7 @@ class BotAPI:
         return await self._http.request(route, json=payload)
 
     async def mute_multi_member(
-        self, guild_id: str, user_ids: List[str], mute_end_timestamp: str = None, mute_seconds: str = None
+            self, guild_id: str, user_ids: List[str], mute_end_timestamp: str = None, mute_seconds: str = None
     ) -> str:
         """
         使频道中的多个成员禁言
@@ -938,7 +938,7 @@ class BotAPI:
         return await self._http.request(route, json=payload)
 
     async def create_recommend_announce(
-        self, guild_id: str, announces_type: announce.AnnouncesType, recommend_channels: List[announce.RecommendChannel]
+            self, guild_id: str, announces_type: announce.AnnouncesType, recommend_channels: List[announce.RecommendChannel]
     ) -> announce.Announce:
         """
         创建推荐子频道类型的频道公告
@@ -994,7 +994,7 @@ class BotAPI:
         return data["apis"]
 
     async def post_permission_demand(
-        self, guild_id: str, channel_id: str, api_identify: permission.APIPermissionDemandIdentify, desc: str
+            self, guild_id: str, channel_id: str, api_identify: permission.APIPermissionDemandIdentify, desc: str
     ) -> permission.APIPermissionDemand:
         """
         用于创建 API 接口权限授权链接，该链接指向guild_id对应的频道
@@ -1047,13 +1047,13 @@ class BotAPI:
         return await self._http.request(route)
 
     async def create_schedule(
-        self,
-        channel_id: str,
-        name: str,
-        start_timestamp: str,
-        end_timestamp: str,
-        jump_channel_id: str,
-        remind_type: schedule.RemindType,
+            self,
+            channel_id: str,
+            name: str,
+            start_timestamp: str,
+            end_timestamp: str,
+            jump_channel_id: str,
+            remind_type: schedule.RemindType,
     ) -> schedule.Schedule:
         """
         用于在日程子频道创建一个日程。
@@ -1092,14 +1092,14 @@ class BotAPI:
         return await self._http.request(route, json=payload)
 
     async def update_schedule(
-        self,
-        channel_id: str,
-        schedule_id: str,
-        name: str,
-        start_timestamp: str,
-        end_timestamp: str,
-        jump_channel_id: str,
-        remind_type: schedule.RemindType,
+            self,
+            channel_id: str,
+            schedule_id: str,
+            name: str,
+            start_timestamp: str,
+            end_timestamp: str,
+            jump_channel_id: str,
+            remind_type: schedule.RemindType,
     ) -> schedule.Schedule:
         """
         修改日程。
@@ -1204,13 +1204,13 @@ class BotAPI:
         return await self._http.request(route)
 
     async def get_reaction_users(
-        self,
-        channel_id: str,
-        message_id: str,
-        emoji_type: emoji.EmojiType,
-        emoji_id: str,
-        cookie: str = None,
-        limit: int = 20,
+            self,
+            channel_id: str,
+            message_id: str,
+            emoji_type: emoji.EmojiType,
+            emoji_id: str,
+            cookie: str = None,
+            limit: int = 20,
     ) -> reaction.ReactionUsers:
         """
         获取表情表态用户列表
@@ -1378,19 +1378,19 @@ class BotAPI:
         return await self._http.request(route)
 
     async def post_group_message(
-        self,
-        group_openid: str,
-        msg_type: int = 0,
-        content: str = None,
-        embed: message.Embed = None,
-        ark: message.Ark = None,
-        message_reference: message.Reference = None,
-        media: message.Media = None,
-        msg_id: str = None,
-        msg_seq: int = 1,
-        event_id: str = None,
-        markdown: message.MarkdownPayload = None,
-        keyboard: message.KeyboardPayload = None,
+            self,
+            group_openid: str,
+            msg_type: int = 0,
+            content: str = None,
+            embed: message.Embed = None,
+            ark: message.Ark = None,
+            message_reference: message.Reference = None,
+            media: message.Media = None,
+            msg_id: str = None,
+            msg_seq: int = 1,
+            event_id: str = None,
+            markdown: message.MarkdownPayload = None,
+            keyboard: message.Keyboard = None,
     ) -> message.Message:
         """
         发送消息。
@@ -1413,7 +1413,7 @@ class BotAPI:
           msg_seq (int): 回复消息的序号，与 msg_id 联合使用，默认是1。相同的 msg_id + msg_seq 重复发送会失败。
           event_id (str): 您要回复的消息的事件 ID。
           markdown (message.MarkdownPayload): markdown 消息
-          keyboard (message.KeyboardPayload): keyboard 消息
+          keyboard (message.Keyboard): keyboard 消息
 
         Returns:
           message.Message: 一个消息字典对象。
@@ -1424,19 +1424,19 @@ class BotAPI:
         return await self._http.request(route, json=payload)
 
     async def post_c2c_message(
-        self,
-        openid: str,
-        msg_type: int = 0,
-        content: str = None,
-        embed: message.Embed = None,
-        ark: message.Ark = None,
-        message_reference: message.Reference = None,
-        media: message.Media = None,
-        msg_id: str = None,
-        msg_seq: int = 1,
-        event_id: str = None,
-        markdown: message.MarkdownPayload = None,
-        keyboard: message.KeyboardPayload = None,
+            self,
+            openid: str,
+            msg_type: int = 0,
+            content: str = None,
+            embed: message.Embed = None,
+            ark: message.Ark = None,
+            message_reference: message.Reference = None,
+            media: message.Media = None,
+            msg_id: str = None,
+            msg_seq: str = 1,
+            event_id: str = None,
+            markdown: message.MarkdownPayload = None,
+            keyboard: message.Keyboard = None,
     ) -> message.Message:
         """
         发送消息。
@@ -1459,7 +1459,7 @@ class BotAPI:
           msg_seq (int): 回复消息的序号，与 msg_id 联合使用，默认是1。相同的 msg_id + msg_seq 重复发送会失败。
           event_id (str): 您要回复的消息的事件 ID。
           markdown (message.MarkdownPayload): markdown 消息
-          keyboard (message.KeyboardPayload): keyboard 消息
+          keyboard (message.Keyboard): keyboard 消息
 
         Returns:
           message.Message: 一个消息字典对象。
@@ -1470,11 +1470,12 @@ class BotAPI:
         return await self._http.request(route, json=payload)
 
     async def post_group_file(
-        self,
-        group_openid: str,
-        file_type: int,
-        url: str,
-        srv_send_msg: bool = False,
+            self,
+            group_openid: str,
+            file_type: int,
+            file_data: str = None,
+            url: str = None,
+            srv_send_msg: bool = False,
     ) -> message.Media:
         """
         上传/发送群聊图片
@@ -1491,11 +1492,12 @@ class BotAPI:
         return await self._http.request(route, json=payload)
 
     async def post_c2c_file(
-        self,
-        openid: str,
-        file_type: int,
-        url: str,
-        srv_send_msg: bool = False,
+            self,
+            openid: str,
+            file_type: int,
+            file_data: str = None,
+            url: str = None,
+            srv_send_msg: bool = False,
     ) -> message.Media:
         """
         上传/发送c2c图片
